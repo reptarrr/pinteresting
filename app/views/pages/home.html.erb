@@ -1,48 +1,14 @@
-<div class= "jumbotron">
+<div class= "jumbotron center">
 	<h1>Welcome to our test page!</h1>
-	<p> We want to thank you for taking the time out to visit us.
-	<br>
-	<br>
-	We are elated that you are interested in our product. 
-	<br>
-	<br>
-	Please take the time out to sign up for updates as we move along the design and implementation process.
-	<br>
-	<br>
-	<i>Cheers! </i>
-	<!-- Button trigger modal -->
-<p>Click here to <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Sign up
-</button>  <%= link_to "Log in", "#", class: "btn btn-default btn-lg"%>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Sign up!</h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-  <div class="col-xs-3">
-    <p>Name<input type="text" class="form-control" placeholder="Name"></p>
-  </div>
-  <div class="col-xs-3">
-    <p>Email<input type="text" class="form-control" placeholder="Email Address"></p>
-  </div>
-  <div class="col-xs-4">
-    <p>Phone Number<input type="text" class="form-control" placeholder="Phone Number"></p>
-  </div>
-</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Continue</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div></p><!-- /.modal -->
+<% if user_signed_in? %>
+# do something
+<% else %>
+  <p>
+    <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg"%>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg"%>
+ 
+  </p>
+	<% end %>
 </div>
 <div class="row">
         <div class="col-sm-6 col-md-4">
